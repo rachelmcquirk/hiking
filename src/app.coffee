@@ -7,7 +7,8 @@ Qs = require 'qs'
 config = require './config'
 gulpConfig = require '../gulp_config'
 HomePage = require './pages/home'
-RedPage = require './pages/red'
+HikePage = require './pages/hike'
+MapPage = require './pages/map'
 FourOhFourPage = require './pages/404'
 
 ANIMATION_TIME_MS = 500
@@ -44,15 +45,19 @@ module.exports = class App
     $homePage = new HomePage({
       requests: requests.filter ({$page}) -> $page instanceof HomePage
     })
-    $redPage = new RedPage({
-      requests: requests.filter ({$page}) -> $page instanceof RedPage
+    $hikePage = new HikePage({
+      requests: requests.filter ({$page}) -> $page instanceof HikePage
+    })
+    $mapPage = new MapPage({
+      requests: requests.filter ({$page}) -> $page instanceof MapPage
     })
     $fourOhFourPage = new FourOhFourPage({
       requests: requests.filter ({$page}) -> $page instanceof FourOhFourPage
     })
 
     router.addRoute '/', -> $homePage
-    router.addRoute '/red', -> $redPage
+    router.addRoute '/map', -> $mapPage
+    router.addRoute '/hikes/san-francisco-bay/:hike', -> $hikePage
     router.addRoute '*', -> $fourOhFourPage
 
     handleRequest = requests.doOnNext ({req, res, route, $page}) =>

@@ -2,12 +2,12 @@ z = require 'zorium'
 Rx = require 'rx-lite'
 
 Head = require '../../components/head'
-HelloWorld = require '../../components/hello_world'
+Home = require '../../components/home'
 
 module.exports = class HomePage
   constructor: ->
     @$head = new Head()
-    @$hello = new HelloWorld()
+    @$hello = new Home()
 
   renderHead: (params) =>
     z @$head, params

@@ -62,7 +62,7 @@ describe 'functional tests', ->
 
   it 'navigates on button click', ->
     client
-      .click '.p-home .z-hello-world button'
+      .click '.p-home .z-home button'
       .getTitle()
       .then (title) ->
         title.should.eql 'Zorium Seed - Red Page'

@@ -1,0 +1,27 @@
+@require 'zorium-paper/base'
+
+json('zorium-paper/colors.json')
+
+.z-map
+  zp-shadow-1()
+  background: $white
+  border-radius: 2px
+  justify-content: center
+
+  > .content
+    zp-font-display2()
+    align-self: center
+    color: black
+    text-align: center
+    padding: 20px
+
+  > .nav-bar
+    zp-font-title()
+    display: flex
+    border-bottom: 3px solid rgb(119, 221, 206)
+
+    > .tab
+      padding: 10px 45px
+
+      &.active
+        background-color: blue

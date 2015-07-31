@@ -2,21 +2,21 @@ rewire = require 'rewire'
 should = require('chai').should()
 query = require 'vtree-query'
 
-Red = rewire './index'
+Home = rewire './index'
 
-describe 'z-red', ->
-  it 'goes to home page', (done) ->
-    Red.__with__({
+describe 'z-home', ->
+  it 'goes to red page', (done) ->
+    Home.__with__({
       'z.router.go': (path) ->
-        path.should.eql '/'
+        path.should.eql '/red'
         done()
     }) ->
-      $hello = new Red()
+      $hello = new Home()
 
-      $hello.goToHome()
+      $hello.goToRed()
 
-  it 'says hello world', ->
-    $hello = new Red()
+  it 'says Hello World', ->
+    $hello = new Home()
 
     $ = query($hello.render())
     $('.content').contents.should.eql 'Hello World'
