@@ -116,6 +116,9 @@ module.exports = class Head
         null
 
       # scripts
+      z 'script',
+        src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAhdBkbeqCvLyGS41_sZDhZuzlyu45al8w'
+
       z 'script.bundle',
         async: true
         src: if isInliningSource then bundlePath \

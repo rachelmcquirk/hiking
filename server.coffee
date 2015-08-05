@@ -24,29 +24,7 @@ app.use compress()
 
 webpackDevHost = "#{gulpConfig.WEBPACK_DEV_HOSTNAME}:" +
                  "#{gulpConfig.WEBPACK_DEV_PORT}"
-scriptSrc = [
-  '\'self\''
-  '\'unsafe-inline\''
-  'www.google-analytics.com'
-  if config.ENV is config.ENVS.DEV then webpackDevHost
-]
-stylesSrc = [
-  '\'unsafe-inline\''
-  if config.ENV is config.ENVS.DEV then webpackDevHost
-]
-app.use helmet.contentSecurityPolicy
-  scriptSrc: scriptSrc
-  stylesSrc: stylesSrc
-app.use helmet.xssFilter()
-app.use helmet.frameguard()
-app.use helmet.hsts
-  # https://hstspreload.appspot.com/
-  maxAge: MIN_TIME_REQUIRED_FOR_HSTS_GOOGLE_PRELOAD_MS
-  includeSubdomains: true # include in Google Chrome
-  preload: true # include in Google Chrome
-  force: true
-app.use helmet.noSniff()
-app.use helmet.crossdomain()
+
 app.disable 'x-powered-by'
 
 app.use '/healthcheck', (req, res, next) ->

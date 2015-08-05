@@ -58,6 +58,7 @@ module.exports = class App
     router.addRoute '/', -> $homePage
     router.addRoute '/map', -> $mapPage
     router.addRoute '/hikes/san-francisco-bay/:hike', -> $hikePage
+    router.addRoute '/hikes/san-francisco-bay/:hike/:tab', -> $hikePage
     router.addRoute '*', -> $fourOhFourPage
 
     handleRequest = requests.doOnNext ({req, res, route, $page}) =>
@@ -109,5 +110,5 @@ module.exports = class App
             className: z.classKebab {isEntering, isActive}
             z '.current',
               $currentPage
-            z '.next',
-              $nextPage
+            # z '.next',
+            #   $nextPage

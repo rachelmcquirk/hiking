@@ -1,0 +1,50 @@
+@require 'zorium-paper/base'
+
+json('zorium-paper/colors.json')
+
+.z-hike-details
+  zp-font-title()
+  display: flex
+  flex-direction: column
+
+  > .picture
+    width: 100%
+
+  > .hike-info
+    margin: 16px
+
+    > .hike-length
+      display: flex
+
+      > .difficulty
+        position: absolute
+        right: 16px
+
+    > .address
+
+      > .space
+        margin-left: 16px
+
+    > .parking
+
+      > .space
+        margin-left: 16px
+
+    > .highlights
+
+      > .space
+        margin-left: 16px
+
+      > .positive
+
+        .icon.check
+          height: 24px
+          margin-right: 8px
+          color: $lime500
+
+      > .negative
+
+        .icon.close
+          height: 24px
+          margin-right: 8px
+          color: $red400

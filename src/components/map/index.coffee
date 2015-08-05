@@ -24,9 +24,6 @@ module.exports = class Map
     @$button = new Button()
     @$input = new Input()
 
-  goToRed: ->
-    z.router.go '/red'
-
   render: =>
     z '.z-map', # <div class='z-map'>
       z '.content', # <div class='content'>
