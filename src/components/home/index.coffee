@@ -8,39 +8,42 @@ if window?
   require './index.styl'
 
 hikes = require '../../models/hikes'
+List = require '../list'
+Map = require '../map'
+
 
 module.exports = class Home
   constructor: ->
     @$button = new Button()
     @$input = new Input()
+    @$list = new List()
+    @$map = new Map()
+
+    @state = z.state
+      tab: 'list'
 
   render: =>
+    {tab} = @state.getValue()
+
     z '.z-home', # <div class='z-home'>
       z '.content', # <div class='content'>
         '5 Beautiful Bay Area Hikes'
       z '.nav-bar',
-        z.router.link z 'a.tab.active', {
-          href: '/'
+        z 'a.tab', {
+          className: z.classKebab {isActive: tab is 'list'}
+          href: '#'
+          onclick: =>
+            @state.set tab: 'list'
         },
           'List'
-        z.router.link z 'a.tab', {
-          href: '/map'
+        z 'a.tab', {
+          className: z.classKebab {isActive: tab is 'map'}
+          href: '#'
+          onclick: =>
+            @state.set tab: 'map'
         },
           'Map'
-      z '.list',
-        _.map hikes, (hike) ->
-          z.router.link z 'a.hike', {
-            href: hike.path
-          },
-            z 'img.picture',
-              src: hike.picture
-            z '.hike-info',
-              z '.hike-info-left',
-                z '.hike-name',
-                  hike.name
-                z '.hike-area',
-                  hike.area
-              z '.hike-length',
-                z 'img.length',
-                  src: '/pictures/hike.png'
-                hike.length
+      if tab is 'list'
+        z @$list
+      else if tab is 'map'
+        z @$map

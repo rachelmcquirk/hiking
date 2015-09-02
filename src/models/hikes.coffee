@@ -4,13 +4,14 @@ module.exports =
     picture: '/pictures/purisima.jpg'
     path: '/hikes/san-francisco-bay/purisima-creek'
     length: '8 miles'
-    location: '*this park'
+    location: 'this park'
     latitude: 37.44963
     longitude: -122.33882
     difficulty: 'Difficult'
     parking: 'No fees. About two to three cars may be parked near the trail head. Parking is scant here.'
     highlights: ['Equestrian', 'biking', 'restrooms', 'redwoods']
     negatives: ['no dogs', 'no water fountains']
+    photos: ['/pictures/purisima.jpg', '/pictures/purisima.jpg', '/pictures/purisima.jpg', '/pictures/purisima.jpg']
   'mori-point':
     name: 'Mori Point'
     picture: '/pictures/moripoint.jpg'
@@ -23,6 +24,7 @@ module.exports =
     parking: ''
     highlights: []
     negatives: []
+    photos: []
   'san-pedro-valley':
     name: 'San Pedro Valley'
     picture: '/pictures/sanpedro.jpg'
@@ -35,3 +37,4 @@ module.exports =
     parking: ''
     highlights: []
     negatives: []
+    photos: []

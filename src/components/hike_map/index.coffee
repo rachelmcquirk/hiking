@@ -45,7 +45,15 @@ module.exports = class HikeMap
         lat: hikeObject.latitude
         lng: hikeObject.longitude
       zoom: 15
-    map = new (google.maps.Map)(document.getElementById('map-canvas'), mapOptions)
+      disableDefaultUI: true
+    map = new google.maps.Map document.getElementById('map-canvas'), mapOptions
+    marker = new google.maps.Marker
+      position:
+        lat: hikeObject.latitude
+        lng: hikeObject.longitude
+      map: map
+    marker.addListener 'click', ->
+      window.location.href = "https://maps.google.com?saddr=Current+Location&daddr=#{hikeObject.latitude},#{hikeObject.longitude}"
 
   render: =>
     z '.z-hike-map',

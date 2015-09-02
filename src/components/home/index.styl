@@ -25,49 +25,5 @@ json('zorium-paper/colors.json')
       text-decoration: none
       color: black
 
-      &.active
+      &.is-active
         border-bottom: 15px solid $lime500
-
-  > .list
-    zp-font-title()
-    display: flex
-    flex-direction: column
-
-    > .hike
-      position: relative
-      margin: 8px 0px auto auto
-      text-decoration: none
-
-      > .picture
-        width: 100%
-
-      > .hike-info
-        display: flex
-
-        > .hike-info-left
-          margin-bottom: 0
-
-          > .hike-name
-            zp-font-title()
-            position: absolute
-            bottom: 36px
-            color: #fff
-            left: 16px
-            font-weight: bold
-
-          > .hike-area
-            zp-font-subhead()
-            position: absolute
-            bottom: 16px
-            color: #fff
-            left: 16px
-
-        > .hike-length
-          position: absolute
-          right: 16px
-          bottom: 16px
-          color: #fff
-          background-color: $red500
-          font-weight: bold
-          padding: 10px
-          border-radius: 5px

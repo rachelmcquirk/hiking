@@ -6,6 +6,7 @@ paperColors = require 'zorium-paper/colors.json'
 _ = require 'lodash'
 
 hikes = require '../../models/hikes'
+HikeMap = require '../hike_map'
 
 if window?
   require './index.styl'
@@ -14,6 +15,8 @@ module.exports = class HikeDetails
   constructor: ({hike}) -> # same as hike = options.hike;
     @$checkIcon = new Icon()
     @$closeIcon = new Icon()
+    @$hikeMap = new HikeMap {hike} #passing through hike so that it knows which hike
+
 
     @state = z.state #
       hike: hike #
@@ -36,6 +39,7 @@ module.exports = class HikeDetails
         z '.address',
           z 'h5', 'Location'
             z '.space', hikeObject?.location
+            '*Click on the marker for directions'
             z @$hikeMap
         z '.parking',
           z 'h5', 'PARKING'

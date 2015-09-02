@@ -6,7 +6,6 @@ paperColors = require 'zorium-paper/colors.json'
 _ = require 'lodash'
 
 hikes = require '../../models/hikes'
-HikeMap = require '../hike_map'
 HikePhotos = require '../hike_photos'
 HikeDetails = require '../hike_details'
 
@@ -16,7 +15,6 @@ if window?
 module.exports = class Hike
   constructor: ({hike, tab}) -> # same as hike = options.hike; tab = options.tab
     @$backIcon = new Icon()
-    @$hikeMap = new HikeMap {hike} #passing through hike so that it knows which hike
     @$hikePhotos = new HikePhotos {hike}
     @$hikeDetails = new HikeDetails {hike}
 
@@ -36,15 +34,16 @@ module.exports = class Hike
             icon: 'arrow-left'
             isTouchTarget: true
             onclick: ->
-              console.log 'click'
-              window.history.back()
+              z.router.go '/'
           hikeObject?.name
       z '.nav-bar',
-        z.router.link z 'a.tab.active', {
+        z.router.link z 'a.tab', {
+          className: z.classKebab {isActive: tab is 'details'}
           href: hikeObject?.path + '/details'
         },
           'Details'
         z.router.link z 'a.tab', {
+          className: z.classKebab {isActive: tab is 'photos'}
           href: "#{hikeObject?.path}/photos"
         },
           'Photos'

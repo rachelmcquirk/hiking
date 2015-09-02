@@ -22,4 +22,7 @@ module.exports = class HikePhotos
     hikeObject = hikes[hike]
 
     z '.z-hike-photos', # <div class='z-hike'>
-      'Photos'
+      z '.photos'
+      _.map hikeObject?.photos, (photo) =>
+        z 'img.photo',
+          src: photo

@@ -8,7 +8,6 @@ config = require './config'
 gulpConfig = require '../gulp_config'
 HomePage = require './pages/home'
 HikePage = require './pages/hike'
-MapPage = require './pages/map'
 FourOhFourPage = require './pages/404'
 
 ANIMATION_TIME_MS = 500
@@ -48,15 +47,11 @@ module.exports = class App
     $hikePage = new HikePage({
       requests: requests.filter ({$page}) -> $page instanceof HikePage
     })
-    $mapPage = new MapPage({
-      requests: requests.filter ({$page}) -> $page instanceof MapPage
-    })
     $fourOhFourPage = new FourOhFourPage({
       requests: requests.filter ({$page}) -> $page instanceof FourOhFourPage
     })
 
     router.addRoute '/', -> $homePage
-    router.addRoute '/map', -> $mapPage
     router.addRoute '/hikes/san-francisco-bay/:hike', -> $hikePage
     router.addRoute '/hikes/san-francisco-bay/:hike/:tab', -> $hikePage
     router.addRoute '*', -> $fourOhFourPage
