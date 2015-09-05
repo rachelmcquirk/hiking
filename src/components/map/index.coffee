@@ -37,4 +37,6 @@ module.exports = class Map
 
   render: =>
     z '.z-map', # <div class='z-map'>
+      style:
+        height: window.innerHeight + 'px'
       z '#map-canvas',

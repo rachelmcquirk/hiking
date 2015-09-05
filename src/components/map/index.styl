@@ -3,7 +3,9 @@
 json('zorium-paper/colors.json')
 
 .z-map
-  display: block
+  display: flex
+  flex: 1
+  flex-direction: column
 
   > #map-canvas
     width: 100%
@@ -12,7 +14,7 @@ json('zorium-paper/colors.json')
   .z-map_info-window
     > a
       text-decoration: none;
-      
+
       > #photo
         height: 120px
         width: 170px

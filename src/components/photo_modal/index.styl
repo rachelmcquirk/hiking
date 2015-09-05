@@ -1,0 +1,44 @@
+@require 'zorium-paper/base'
+
+json('zorium-paper/colors.json')
+
+.z-photo-modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.5)
+  display: flex
+  align-items: center
+
+  > .overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+  > .border
+    width: 100%
+    height: 300px
+    background: black
+    display: flex
+
+    > .previous
+      display: flex
+      align-items: center
+
+      .icon.chevron-left
+        color: white
+
+    > .current-photo
+      border: 0
+      position: relative
+
+    > .next
+      display: flex
+      align-items: center
+
+      .icon.chevron-right
+        color: white
