@@ -9,25 +9,31 @@ json('zorium-paper/colors.json')
   justify-content: center
 
   > .content
-    zp-font-display2()
+    zp-font-headline()
     align-self: center
-    color: black
+    color: white
+    background-color: $cyan500
+    padding: 20px 0
 
     .icon.arrow-left
       height: 32px
+      color: white
 
     > h5
       text-align: left
+      margin: 0
 
   > .nav-bar
-    zp-font-title()
+    zp-font-subhead()
+    font-weight: bold
     display: flex
-    border-bottom: 4px solid $lime500
+    border-bottom: 5px solid $lime500
+    background-color: $cyan500
 
     > .tab
-      padding: 12px 44px
+      padding: 5px 30px
       text-decoration: none
-      color: black
+      color: white
 
       &.is-active
-        border-bottom: 16px solid $lime500
+        border-bottom: 8px solid $lime500

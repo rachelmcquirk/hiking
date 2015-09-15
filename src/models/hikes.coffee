@@ -1,7 +1,8 @@
 module.exports =
   'purisima-creek':
-    name: 'Harkin\'s Ridge Trail'
+    name: 'Purisima Creek'
     picture: '/pictures/purisima.jpg'
+    area: 'Penninsula Area'
     path: '/hikes/san-francisco-bay/purisima-creek'
     length: '3.3 miles'
     location: 'Purisima Creek Redwoods'
@@ -16,6 +17,7 @@ module.exports =
   'mori-point':
     name: 'Mori Point'
     picture: '/pictures/moripoint.jpg'
+    area: 'Penninsula Area'
     path: '/hikes/san-francisco-bay/mori-point'
     length: '2.1 miles'
     location: ''
@@ -30,6 +32,7 @@ module.exports =
   'san-pedro-valley':
     name: 'Montara Mountain Trail'
     picture: '/pictures/sanpedro.jpg'
+    area: 'Penninsula Area'
     path: '/hikes/san-francisco-bay/san-pedro-valley'
     length: '2.1 miles'
     location: 'San Pedro Valley'

@@ -27,12 +27,11 @@ module.exports = class HikePhotos
     hikeObject = hikes[hike]
 
     z '.z-hike-photos', # <div class='z-hike'>
-      z '.photos'
+      z '.photos',
       _.map hikeObject?.photos, (photo, i) =>
         z '.photo',
           onclick: =>
             @state.set {isPhotoModalVisible: true, currentPhotoIndex: i}
-            console.log (i)
           style:
             backgroundImage: "url(/pictures#{photo})"
 

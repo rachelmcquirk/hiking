@@ -23,6 +23,7 @@ module.exports = class List
           z 'img.picture',
             src: hike.picture
           z '.hike-info',
+            z '.shadow'
             z '.hike-info-left',
               z '.hike-name',
                 hike.name

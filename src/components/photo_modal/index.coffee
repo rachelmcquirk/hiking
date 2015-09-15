@@ -29,14 +29,15 @@ module.exports = class PhotoModal
           onClose()
       z '.border',
         z '.previous',
+          onclick: =>
+            onPrevious()
           z @$chevronLeftIcon,
             icon: 'chevron-left'
-            onclick: =>
-              onPrevious()
-        z 'img.current-photo',
-          src: "/pictures#{currentPhoto}"
+        z '.imgdiv',
+          z 'img.current-photo',
+            src: "/pictures#{currentPhoto}"
         z '.next',
+          onclick: =>
+            onNext()
           z @$chevronRightIcon,
             icon: 'chevron-right'
-            onclick: =>
-              onNext()

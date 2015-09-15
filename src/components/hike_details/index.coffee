@@ -37,7 +37,7 @@ module.exports = class HikeDetails
           z '.difficulty',
             'Difficulty: ' + hikeObject?.difficulty
         z '.address',
-          z 'h5', 'Location'
+          z 'h5', 'LOCATION'
             z '.space', hikeObject?.location
             '*Click on the marker for directions'
             z @$hikeMap
